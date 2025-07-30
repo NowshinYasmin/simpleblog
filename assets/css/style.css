@@ -1,14 +1,53 @@
-body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 30px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.lang-switch a {
+    padding: 5px 10px;
+    background: #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    margin-left: 5px;
+}
+.lang-switch a:hover {
+    background: #bbb;
+}
+
 .post {
-    background: #f0f0f0;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.post a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+.post a:hover {
+    text-decoration: underline;
 }
 @media screen and (max-width: 600px) {
     body {
@@ -17,4 +56,81 @@ body {
     .post {
         font-size: 14px;
     }
+}
+form input[type="text"] {
+    padding: 6px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+form input[type="submit"] {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+form input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+.container {
+  display: flex!important;
+  gap: 20px;
+}
+
+/* Main content takes 70%, sidebar 30% */
+.content {
+  flex: 2;
+}
+.sidebar {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+
+  /* Make it sticky */
+  position: sticky;
+  top: 20px;
+  align-self: flex-start; /* Ensures it doesn't stretch */
+}
+.sidebar h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  margin: 8px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: static; /* Disable sticky on mobile for better UX */
+    margin-top: 20px;
+  }
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #777;
 }
